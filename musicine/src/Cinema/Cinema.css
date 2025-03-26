@@ -1,0 +1,114 @@
+.section.cinema {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    background: rgb(0, 0, 0);
+    cursor: default;
+}
+
+.background-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: filter 0.6s ease-in-out;
+}
+
+.cinema-overlay {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse, 
+        rgba(0, 0, 0, 0) 1%, 
+        rgba(0, 0, 0, 0.6) 30%, 
+        rgba(0, 0, 0, 0.9) 55%, 
+        rgb(0, 0, 0) 100%
+    );
+    transition: opacity 0.6s ease-in-out;
+}
+
+.background-container.hover-effect .cinema-overlay {
+    opacity: 0.1;
+}
+
+/* Image principale */
+.cinema-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: filter 0.6s ease-in-out;
+}
+
+/* ✅ Bouton Letterboxd */
+.cinema-button {
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    width: 12vw;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* 🚀 Image cachée qui apparaît au hover */
+.cinema-mystery {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw; /* Taille adaptable */
+    height: auto;
+    pointer-events: none; /* Empêche toute interaction avec l’image */
+}
+
+
+/* ✅ Modifier la taille et désactiver effets sur mobile */
+@media (max-width: 768px) {
+
+    .background-container {
+        width: 90vw;
+    }
+
+    .cinema-overlay {
+        width: 110%;
+        height: 110%;
+        background: radial-gradient(ellipse, 
+        rgba(0, 0, 0, 0) 30%, 
+        rgba(0, 0, 0, 0.6) 45%, 
+        rgba(0, 0, 0, 0.9) 60%, 
+        rgb(0, 0, 0) 80%
+    );
+    }
+
+    .cinema-image {
+        width: 100%; /* Taille plus petite */
+        height: auto;
+        filter: none !important; /* Enlève les effets */
+    }
+
+    .cinema-button {
+        width: 20vw; /* Bouton plus petit sur mobile */
+        top: 40%;
+        left: 40%;
+        filter: none !important;
+        opacity: 1 !important; /* Supprime l'effet de transparence */
+    }
+}
