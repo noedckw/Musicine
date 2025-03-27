@@ -1,0 +1,27 @@
+.section.music {
+    height: 50vh; /* Fixe la hauteur à 50% de la hauteur de l'écran */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a; /* Couleur de fond optionnelle si l'image n'est pas bien chargée */
+    overflow: hidden;
+  }
+  
+  /* Image de couverture */
+  .section.music img {
+    width: 1000px; /* Taille réduite de l'image */
+    height: 100px; /* Taille réduite de l'image */
+    object-fit: cover; /* L'image couvre la zone sans être déformée */
+    border-radius: 10px; /* Coins arrondis pour l'image */
+  }
+  
+  /* Texte */
+  .section.music h1 {
+    color: rgb(104, 41, 41);
+    font-size: 1.5rem; /* Taille du texte */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+  

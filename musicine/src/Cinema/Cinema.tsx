@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import blackLodge from "../assets/Black_Lodge_no_border.jpg";
 import LetterboxdButton from "../assets/Letterboxd_button.png";
 import config from "./../Config/Config";
-import "./Cinema.css"; // On garde le CSS
+import "./Cinema.css";
 
 export default function Cinema() {
   const [isHovered, setIsHovered] = useState(false);
@@ -28,7 +28,7 @@ export default function Cinema() {
 
         {/* Image principale */}
         <img src={blackLodge} alt="Black Lodge" className="cinema-image" />
-        
+
         {/* Bouton Letterboxd */}
         <a
           href={config.letterboxdUrl}
@@ -51,7 +51,7 @@ export default function Cinema() {
             whileHover={
               !isMobile
                 ? {
-                    scale: 1.5, // Grossissement au hover
+                    scale: 1.3, // Grossissement au hover
                     opacity: 1,
                     filter: "blur(0px)",
                     y: -20, // Léger déplacement

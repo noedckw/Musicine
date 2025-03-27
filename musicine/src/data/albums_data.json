@@ -1,0 +1,9 @@
+{
+  "albums": [
+    {
+      "background": "/assets/albums/i_am_music_cover.png",
+      "cover": "/assets/albums/i_am_music_background.jpg",
+      "text": "I AM MUSIC - PLAYBOI CARTI"
+    }
+  ]
+}
