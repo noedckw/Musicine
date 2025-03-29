@@ -191,6 +191,9 @@
 /* Version mobile */
 @media (max-width: 768px) {
   /* Section musique */
+  .section.music {
+    height: 70vh; /* Occupe la moitié inférieure */
+  }
 
   /* Conteneur de la musique */
   .music-content {
