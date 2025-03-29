@@ -59,13 +59,13 @@
   z-index: 2;
   color: white;
   text-align: left;
-  margin-right: 12vw;
-  margin-bottom: 10vw;
+  margin-left: 7vw;
+  margin-bottom: 5vw;
 }
 
 /* Image de couverture */
 .music-cover {
-  width: 10vw; /* Largeur de l'image */
+  width: 14vw; /* Largeur de l'image */
   height: auto; /* La hauteur est automatiquement ajustée */
   object-fit: cover;
   border-radius: 5px;
@@ -98,35 +98,35 @@
   display: flex;
   flex-direction: column; /* Empile les titres verticalement */
   justify-content: flex-start; /* Aligne les titres au début (haut) */
-  gap: 5px; /* Espacement entre les titres */
+  gap: 10px; /* Espacement entre les titres */
   align-self: flex-start; /* Permet au texte de commencer à la même hauteur que l'image */
 }
 
 /* Style des titres */
 .music-content h1 {
   color: #ffffff;
-  font-size: 2.2rem;
+  font-size: 2vw;
   font-weight: bold;
   margin: 0;
 }
 
 .music-content h2 {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   margin: 0;
 }
 
 .music-content h3 {
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1vw;
   margin: 0;
 }
 
 .music .description {
   background-color: rgb(0, 0, 0);
   position: absolute; /* Position absolue par rapport à la page */
-  bottom: 6vh; /* Colle l'élément en bas de la page */
-  left: 2vw; /* Colle l'élément à gauche de la page */
+  bottom: 2vh; /* Colle l'élément en bas de la page */
+  left: 2vh; /* Colle l'élément à gauche de la page */
   display: flex; /* Utilisation de flexbox */
   align-items: center;
   flex-direction: column; /* Aligne les éléments (texte et image) en colonne */
@@ -134,7 +134,7 @@
 }
 
 .music .description h1 {
-  font-size: 1rem;
+  font-size: 1.2vw;
   position: relative;
   margin: 0; /* Retirer la marge pour éviter les espaces indésirables */
   color: white; /* Couleur du texte */
@@ -144,7 +144,7 @@
   all: unset; /* Supprime tous les styles par défaut */
   display: inline-block; /* Permet au bouton de garder sa structure */
   font-family: "Open Sans", sans-serif;
-  font-size: 15px;
+  font-size: 1vw;
   letter-spacing: 1.5px;
   text-decoration: none;
   color: #242424;
@@ -195,7 +195,8 @@
   /* Conteneur de la musique */
   .music-content {
     flex-direction: column; /* Empiler l'image et le texte verticalement sur mobile */
-    margin-left: 0; /* Retirer le margin gauche */
+    gap: 1.5vw;
+    margin-left: -5vw; /* Retirer le margin gauche */
     margin-top: -5vh; /* Réduire l'espacement inférieur */
   }
 
@@ -224,7 +225,7 @@
   }
 
   .music .description h1 {
-    font-size: 2.5vw;
+    font-size: 2.2vw;
     position: relative;
     margin: 0; /* Retirer la marge pour éviter les espaces indésirables */
     color: white; /* Couleur du texte */
@@ -232,7 +233,7 @@
 
   /* Bouton */
   .loading-button {
-    font-size: 2vw; /* Réduire la taille du texte du bouton */
+    font-size: 2.5vw; /* Réduire la taille du texte du bouton */
     margin-left: 0; /* Centrer le bouton */
     margin-top: 1vh; /* Réduire l'espacement */
   }

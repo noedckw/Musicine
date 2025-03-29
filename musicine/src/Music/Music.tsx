@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { getAlbums } from "./../data/albums_data";
-import { getImageURL } from "./../utils/image_utils.js";
+import { getAlbums } from "../data/albums_data.ts";
+import { getImageURL } from "../utils/image_utils.ts";
 import "./Music.css";
 
 interface Album {
-  background: string;
   cover: string;
-  name: string;
-  artist: string;
-  date: string;
-  link: string;
+  background: string;
+  album_name: string;
+  artist_name: string;
+  release_date: string;
+  link_genius: string;
 }
 
 // Fonction pour obtenir un album aléatoire
@@ -24,14 +24,15 @@ const Music: React.FC = () => {
   const loadRandomAlbum = () => {
     const albums = getAlbums();
     if (albums.length > 0) {
-      const randomAlbum = getRandomItem(albums);
+      // On précise ici que randomAlbum est de type Album
+      const randomAlbum = getRandomItem<Album>(albums); // Utilisation explicite du type Album
       setAlbum({
         background: getImageURL(randomAlbum.background),
         cover: getImageURL(randomAlbum.cover),
-        name: randomAlbum.album_name,
-        artist: randomAlbum.artist_name,
-        date: randomAlbum.release_date,
-        link: randomAlbum.link_genius,
+        album_name: randomAlbum.album_name, // Utilisation du nom exact de la propriété 'name'
+        artist_name: randomAlbum.artist_name, // Utilisation du nom exact de la propriété 'artist'
+        release_date: randomAlbum.release_date, // Utilisation du nom exact de la propriété 'date'
+        link_genius: randomAlbum.link_genius, // Utilisation du nom exact de la propriété 'link'
       });
     }
   };
@@ -53,18 +54,17 @@ const Music: React.FC = () => {
       {/* Contenu aligné à gauche */}
       <div className="music-content">
         {album.cover && (
-        <a href={album.link} target="_blank" rel="noopener noreferrer">
+        <a href={album.link_genius} target="_blank" rel="noopener noreferrer">
           <img src={album.cover} alt="Album Cover" className="music-cover" />
         </a>
         )}
         <div className="music-text">
-          <h1>{album.name}</h1>
-          <h2>{album.artist}</h2>
-          <h3>{album.date}</h3>
+          <h1>{album.album_name}</h1>
+          <h2>{album.artist_name}</h2>
+          <h3>{album.release_date}</h3>
         </div>
       </div>
       {/* Ajouter un bouton juste au-dessus de la description */}
-
       <div className="description">
         <h1>my collections of albums.</h1>
         <div className="loading-button" role="button" onClick={loadRandomAlbum}>

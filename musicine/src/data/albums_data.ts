@@ -1,4 +1,15 @@
-const data = [
+// Définir un type pour l'album
+interface Album {
+  cover: string;
+  background: string;
+  album_name: string;
+  artist_name: string;
+  release_date: string;
+  link_genius: string;
+}
+
+// Données des albums
+const data: Album[] = [
   {
     cover: "i_am_music_cover.png",
     background: "i_am_music_background.jpg",
@@ -17,8 +28,9 @@ const data = [
   }
 ]
 
-const getAlbums = () => {
+// Fonction pour récupérer les albums
+const getAlbums = (): Album[] => {
   return data;
 }
 
-export {getAlbums};
+export { getAlbums };
