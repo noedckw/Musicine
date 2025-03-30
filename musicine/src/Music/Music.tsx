@@ -27,8 +27,8 @@ const Music: React.FC = () => {
       // On précise ici que randomAlbum est de type Album
       const randomAlbum = getRandomItem<Album>(albums); // Utilisation explicite du type Album
       setAlbum({
-        background: getImageURL(randomAlbum.background),
-        cover: getImageURL(randomAlbum.cover),
+        background: getImageURL(randomAlbum.background, false),
+        cover: getImageURL(randomAlbum.cover, true),
         album_name: randomAlbum.album_name, // Utilisation du nom exact de la propriété 'name'
         artist_name: randomAlbum.artist_name, // Utilisation du nom exact de la propriété 'artist'
         release_date: randomAlbum.release_date, // Utilisation du nom exact de la propriété 'date'

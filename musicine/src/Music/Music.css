@@ -57,6 +57,7 @@
   justify-content: flex-start; /* Garde les éléments alignés à gauche */
   gap: 20px; /* Espace entre l'image et les titres */
   z-index: 2;
+  width: 38%;
   color: white;
   text-align: left;
   margin-left: 7vw;
