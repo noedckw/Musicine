@@ -1,4 +1,4 @@
-// Définir un type pour l'album
+
 interface Album {
   album_name: string;
   artist_name: string;
@@ -6,7 +6,6 @@ interface Album {
   link_genius: string;
 }
 
-// Données des albums
 const data: Album[] = [
   {
     album_name: "I AM MUSIC",
@@ -73,10 +72,51 @@ const data: Album[] = [
     artist_name: "Kendrick Lamar",
     release_date: "March 15, 2015",
     link_genius: "https://genius.com/albums/Kendrick-lamar/To-pimp-a-butterfly",
+  },
+  {
+    album_name: "So Much Fun",
+    artist_name: "Young Thug",
+    release_date: "August 16, 2019",
+    link_genius: "https://genius.com/albums/Young-thug/So-much-fun",
+  },
+  {
+    album_name: "DS2",
+    artist_name: "Future",
+    release_date: "July 17, 2015",
+    link_genius: "https://genius.com/albums/Future/Ds2-deluxe",
+  },
+  {
+    album_name: "Madvillainy",
+    artist_name: "Madvillain",
+    release_date: "March 23, 2004",
+    link_genius: "https://genius.com/albums/Madvillain/Madvillainy",
+  },
+  {
+    album_name: "The Marshall Mathers LP",
+    artist_name: "Eminem",
+    release_date: "May 23, 2000",
+    link_genius: "https://genius.com/albums/Eminem/The-marshall-mathers-lp",
+  },
+  {
+    album_name: "The Chronic",
+    artist_name: "Dr. Dre",
+    release_date: "December 15, 1992",
+    link_genius: "https://genius.com/albums/Eminem/The-marshall-mathers-lp",
+  },
+  {
+    album_name: "The Slim Shady LP",
+    artist_name: "Eminem",
+    release_date: "February 23, 1999",
+    link_genius: "https://genius.com/albums/Eminem/The-slim-shady-lp",
+  },
+  {
+    album_name: "The Chronic",
+    artist_name: "Dr. Dre",
+    release_date: "December 15, 1992",
+    link_genius: "https://genius.com/albums/Eminem/The-marshall-mathers-lp",
   }
 ]
 
-// Fonction pour récupérer les albums
 const getAlbums = (): Album[] => {
   return data;
 }
