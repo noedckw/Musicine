@@ -67,6 +67,12 @@ const data: Album[] = [
     artist_name: "Steve Lacy",
     release_date: "July 15, 2022",
     link_genius: "https://genius.com/albums/Steve-lacy/Gemini-rights",
+  },
+  {
+    album_name: "To Pimp a Butterfly",
+    artist_name: "Kendrick Lamar",
+    release_date: "March 15, 2015",
+    link_genius: "https://genius.com/albums/Kendrick-lamar/To-pimp-a-butterfly",
   }
 ]
 
