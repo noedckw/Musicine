@@ -228,13 +228,13 @@ const data: Album[] = [
     artist_name: "Kanye West",
     release_date: "June 18, 2013",
     link_genius: "https://genius.com/albums/Kanye-west/Yeezus",
-  },,
+  },
   {
     album_name: "Kanye West Presents Good Music Cruel Summer",
     artist_name: "G.O.O.D. Music",
     release_date: "September 14, 2012",
     link_genius: "https://genius.com/albums/Good-music/Kanye-west-presents-good-music-cruel-summer",
-  },
+  }
 ]
 
 const getAlbums = (): Album[] => {
