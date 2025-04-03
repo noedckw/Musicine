@@ -234,7 +234,37 @@ const data: Album[] = [
     artist_name: "G.O.O.D. Music",
     release_date: "September 14, 2012",
     link_genius: "https://genius.com/albums/Good-music/Kanye-west-presents-good-music-cruel-summer",
-  }
+  },
+  {
+    album_name: "ye",
+    artist_name: "Kanye West",
+    release_date: "June 1, 2018",
+    link_genius: "https://genius.com/albums/Kanye-west/Ye",
+  },
+  {
+    album_name: "KIDS SEE GHOSTS",
+    artist_name: "KIDS SEE GHOSTS",
+    release_date: "June 8, 2018",
+    link_genius: "https://genius.com/albums/Kids-see-ghosts/Kids-see-ghosts",
+  },
+  {
+    album_name: "JESUS IS KING",
+    artist_name: "Kanye West",
+    release_date: "October 25, 2019",
+    link_genius: "https://genius.com/albums/Kanye-west/Jesus-is-king",
+  },
+  {
+    album_name: "VULTURES 1",
+    artist_name: "¥$, Kanye West & Ty Dolla $ign",
+    release_date: "February 9, 2024",
+    link_genius: "https://genius.com/albums/Kanye-west-and-ty-dolla-sign/Vultures-1",
+  },
+  {
+    album_name: "VULTURES 2",
+    artist_name: "¥$, Kanye West & Ty Dolla $ign",
+    release_date: "August 3, 2024",
+    link_genius: "https://genius.com/albums/Kanye-west-and-ty-dolla-sign/Vultures-2",
+  },
 ]
 
 const getAlbums = (): Album[] => {
