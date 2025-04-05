@@ -195,6 +195,7 @@
 
   /* Conteneur de la musique */
   .music-content {
+    width: 35%;
     flex-direction: column; /* Empiler l'image et le texte verticalement sur mobile */
     gap: 1.5vw;
     margin-left: -8vw; /* Retirer le margin gauche */
