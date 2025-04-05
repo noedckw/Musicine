@@ -183,7 +183,7 @@
 
 
 /* Version mobile */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   /* Section musique */
   .section.music {
     height: 60vh; /* Occupe la moitié inférieure */
