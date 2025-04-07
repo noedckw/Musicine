@@ -74,32 +74,24 @@ const Music: React.FC = () => {
         className="cover-stack"
         style={{
           transform: `translate(${baseShiftX}vw, ${baseShiftY}vw)`,
-          transition: "transform 0.4s ease"
+          transition: "transform 0.4s ease",
         }}
->
-          <div className="cover-placeholder" />
-          {displayedCovers.map((coverIndex, i) => {
-            const cover = album.covers[coverIndex];
-            const translateY = i * -1;
-            const translateX = i * -1;
+      >
+        <div className="cover-placeholder" />
+        {displayedCovers.map((coverIndex) => {
+          const cover = album.covers[coverIndex];
+          return (
+            <img
+              key={coverIndex}
+              src={cover}
+              alt={`Cover ${coverIndex}`}
+              className="music-cover stacked"
+              onClick={() => handleCoverClick(coverIndex)}
+            />
+          );
+        })}
+      </div>
 
-
-            return (
-              <img
-                key={coverIndex}
-                src={cover}
-                alt={`Cover ${coverIndex}`}
-                className="music-cover stacked"
-                style={{
-                  zIndex: displayedCovers.length - i,
-                  transform: `translate(${translateX}vw, ${translateY}vw)`,
-                  transition: "transform 0.4s ease, z-index 0.4s ease",
-                }}
-                onClick={() => handleCoverClick(coverIndex)}
-              />
-            );
-          })}
-        </div>
         <div className="music-text">
           <h1>{album.album_name}</h1>
           <h2>{album.artist_name}</h2>
