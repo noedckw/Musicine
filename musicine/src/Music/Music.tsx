@@ -20,7 +20,6 @@ function getRandomItem<T>(arr: T[]): T {
 const Music: React.FC = () => {
   const [album, setAlbum] = useState<Album | null>(null);
   const [coverOrder, setCoverOrder] = useState<number[]>([]);
-  const [isHovered, setIsHovered] = useState(false);
 
   const loadRandomAlbum = () => {
     const albums = getAlbums();
@@ -81,8 +80,7 @@ const Music: React.FC = () => {
           <div className="cover-placeholder" />
           {displayedCovers.map((coverIndex, i) => {
             const cover = album.covers[coverIndex];
-            const angle = isHovered ? (i - (displayedCovers.length - 1) / 2) * 20 : 0;
-            const translateY = isHovered ? -Math.abs(i - 1) * 4 : i * -1;
+            const translateY = i * -1;
             const translateX = i * -1;
 
 
@@ -94,7 +92,7 @@ const Music: React.FC = () => {
                 className="music-cover stacked"
                 style={{
                   zIndex: displayedCovers.length - i,
-                  transform: `translate(${translateX}vw, ${translateY}vw) rotate(${angle}deg)`,
+                  transform: `translate(${translateX}vw, ${translateY}vw)`,
                   transition: "transform 0.4s ease, z-index 0.4s ease",
                 }}
                 onClick={() => handleCoverClick(coverIndex)}
