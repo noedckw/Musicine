@@ -4,7 +4,8 @@ import { getImageURL } from "../utils/image_utils.ts";
 import "./Music.css";
 
 interface Album {
-  cover: string;
+  folder: string;
+  covers: string[];
   background: string;
   album_name: string;
   artist_name: string;
@@ -12,28 +13,33 @@ interface Album {
   link_genius: string;
 }
 
-// Fonction pour obtenir un album aléatoire
 function getRandomItem<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
 const Music: React.FC = () => {
   const [album, setAlbum] = useState<Album | null>(null);
+  const [coverOrder, setCoverOrder] = useState<number[]>([]);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Charger un album aléatoire à chaque fois que l'album change
   const loadRandomAlbum = () => {
     const albums = getAlbums();
     if (albums.length > 0) {
-      // On précise ici que randomAlbum est de type Album
-      const randomAlbum = getRandomItem(albums); // Utilisation explicite du type Album
+      const randomAlbum = getRandomItem(albums);
+      const folder = randomAlbum.folder;
+      const covers = getImageURL(folder, true) as string[];
+
       setAlbum({
-        background: getImageURL(randomAlbum.album_name, false),
-        cover: getImageURL(randomAlbum.album_name, true),
-        album_name: randomAlbum.album_name, // Utilisation du nom exact de la propriété 'name'
-        artist_name: randomAlbum.artist_name, // Utilisation du nom exact de la propriété 'artist'
-        release_date: randomAlbum.release_date, // Utilisation du nom exact de la propriété 'date'
-        link_genius: randomAlbum.link_genius, // Utilisation du nom exact de la propriété 'link'
+        folder,
+        background: getImageURL(folder, false) as string,
+        covers,
+        album_name: randomAlbum.album_name,
+        artist_name: randomAlbum.artist_name,
+        release_date: randomAlbum.release_date,
+        link_genius: randomAlbum.link_genius,
       });
+
+      setCoverOrder([...Array(covers.length).keys()]);
     }
   };
 
@@ -41,30 +47,67 @@ const Music: React.FC = () => {
     loadRandomAlbum();
   }, []);
 
+  const handleCoverClick = (index: number) => {
+    if (index === coverOrder[0]) {
+      window.open(album?.link_genius, "_blank");
+    } else {
+      const newOrder = [index, ...coverOrder.filter(i => i !== index)];
+      setCoverOrder(newOrder);
+    }
+  };
+
   if (!album) return <div>Loading...</div>;
+
+  const displayedCovers = coverOrder.slice(0, 3);
+
+  const baseShiftX = (displayedCovers.length - 1) * 1; // en vw
+  const baseShiftY = (displayedCovers.length - 1) * 1; // en vw
 
   return (
     <div className="section music">
-      {/* Background image aligné à droite */}
       <div className="music-background-container">
         {album.background && (
           <img src={album.background} alt="Background Music" className="music-background" />
         )}
       </div>
-      {/* Contenu aligné à gauche */}
       <div className="music-content">
-        {album.cover && (
-        <a href={album.link_genius} target="_blank" rel="noopener noreferrer">
-          <img src={album.cover} alt="Album Cover" className="music-cover" />
-        </a>
-        )}
+      <div
+        className="cover-stack"
+        style={{
+          transform: `translate(${baseShiftX}vw, ${baseShiftY}vw)`,
+          transition: "transform 0.4s ease"
+        }}
+>
+          <div className="cover-placeholder" />
+          {displayedCovers.map((coverIndex, i) => {
+            const cover = album.covers[coverIndex];
+            const angle = isHovered ? (i - (displayedCovers.length - 1) / 2) * 20 : 0;
+            const translateY = isHovered ? -Math.abs(i - 1) * 4 : i * -1;
+            const translateX = i * -1;
+
+
+            return (
+              <img
+                key={coverIndex}
+                src={cover}
+                alt={`Cover ${coverIndex}`}
+                className="music-cover stacked"
+                style={{
+                  zIndex: displayedCovers.length - i,
+                  transform: `translate(${translateX}vw, ${translateY}vw) rotate(${angle}deg)`,
+                  transition: "transform 0.4s ease, z-index 0.4s ease",
+                }}
+                onClick={() => handleCoverClick(coverIndex)}
+              />
+            );
+          })}
+        </div>
         <div className="music-text">
           <h1>{album.album_name}</h1>
           <h2>{album.artist_name}</h2>
           <h3>{album.release_date}</h3>
         </div>
       </div>
-      {/* Ajouter un bouton juste au-dessus de la description */}
       <div className="description">
         <h1>my collections of albums.</h1>
         <div className="loading-button" role="button" onClick={loadRandomAlbum}>

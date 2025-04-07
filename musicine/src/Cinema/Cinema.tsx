@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import blackLodge from "../assets/Black_Lodge_no_border.jpg";
+import blackLodge from "../assets/Black_Lodge.jpg";
 import LetterboxdButton from "../assets/Letterboxd_button.png";
 import config from "./../Config/Config";
 import "./Cinema.css";

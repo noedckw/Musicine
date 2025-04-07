@@ -1,243 +1,253 @@
-/* Section musique (toujours en bas de la page) */
-.section.music {
-  height: 50vh; /* Occupe la moitié inférieure */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Contenu aligné à gauche */
-  background-color: #000000; /* Couleur de fond si l'image n'est pas chargée */
-  padding-left: 10%; /* Espace sur la gauche pour le contenu */
-  overflow: hidden;
-}
-
-/* Conteneur du background avec overlay */
-.music-background-container {
-  position: absolute;
-  right: .1vw; /* Aligner à droite */
-  top: 50%; /* Le centre verticalement */
-  transform: translateY(-50%); /* Ajuste pour être parfaitement centré */
-  width: 55%; /* S'étend sur toute la largeur disponible */
-  height: 95%; /* Couvre toute la hauteur du conteneur */
-  z-index: 0; /* Assure que l'overlay est derrière l'image */
-}
-
-/* L'image de fond */
-.music-background {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* L'image couvre bien la zone sans déformation */
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.music-background-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.4) 85%, rgba(0, 0, 0, 0.92) 100%),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.2) 15%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.90) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-
-
-/* Conteneur principal de la section musique */
-.music-content {
-  display: flex; /* Utilise flexbox pour disposer l'image et les titres côte à côte */
-  align-items: flex-start; /* Aligne les éléments au début (haut) */
-  justify-content: flex-start; /* Garde les éléments alignés à gauche */
-  gap: 20px; /* Espace entre l'image et les titres */
-  z-index: 2;
-  width: 38%;
-  color: white;
-  text-align: left;
-  margin-left: 0vw;
-  margin-bottom: 5vw;
-}
-
-/* Image de couverture */
-.music-cover {
-  width: 14vw; /* Largeur de l'image */
-  height: auto; /* La hauteur est automatiquement ajustée */
-  object-fit: cover;
-  border-radius: 5px;
-  box-shadow: -8px 8px 15px rgba(78, 77, 77, 0.7); /* Ombre autour de l'image */
-  transition: transform 0.2s ease, filter 0.3s ease; /* Transition fluide pour le zoom et l'effet */
-  animation: moveZoom 5s infinite ease-in-out; /* Animation continue de mouvement et zoom */
-}
-
-@keyframes moveZoom {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-  50% {
-    transform: scale(1.05) translate(2px, 2px); /* Légère mise à l'échelle et déplacement */
-  }
-  100% {
-    transform: scale(1) translate(0, 0);
-  }
-}
-
-/* Effet de hover cool */
-.music-cover:hover {
-  transform: scale(1.5) translate(5px, -5px); /* Zoom légèrement plus grand et déplacement */
-}
-
-
-
-/* Conteneur des titres */
-.music-text {
-  display: flex;
-  flex-direction: column; /* Empile les titres verticalement */
-  justify-content: flex-start; /* Aligne les titres au début (haut) */
-  gap: 10px; /* Espacement entre les titres */
-  align-self: flex-start; /* Permet au texte de commencer à la même hauteur que l'image */
-}
-
-/* Style des titres */
-.music-content h1 {
-  color: #ffffff;
-  font-size: 2vw;
-  font-weight: bold;
-  margin: 0;
-}
-
-.music-content h2 {
-  color: #ffffff;
-  font-size: 1.5vw;
-  margin: 0;
-}
-
-.music-content h3 {
-  color: #ffffff;
-  font-size: 1vw;
-  margin: 0;
-}
-
-.music .description {
-  background-color: rgb(0, 0, 0);
-  position: absolute; /* Position absolue par rapport à la page */
-  bottom: 2vh; /* Colle l'élément en bas de la page */
-  left: 2vh; /* Colle l'élément à gauche de la page */
-  display: flex; /* Utilisation de flexbox */
-  align-items: center;
-  flex-direction: column; /* Aligne les éléments (texte et image) en colonne */
-  z-index: 10; /* Assure que la description est au-dessus des autres éléments */
-}
-
-.music .description h1 {
-  font-size: 1.2vw;
-  position: relative;
-  margin: 0; /* Retirer la marge pour éviter les espaces indésirables */
-  color: white; /* Couleur du texte */
-}
-
-.loading-button {
-  all: unset; /* Supprime tous les styles par défaut */
-  display: inline-block; /* Permet au bouton de garder sa structure */
-  font-family: "Open Sans", sans-serif;
-  font-size: 1vw;
-  letter-spacing: 1.5px;
-  text-decoration: none;
-  color: #242424;
-  cursor: pointer;
-  position: relative;
-  margin-top: 1.5vh;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  transition: all 0.2s ease-in-out;
-  background: none; /* Supprime le fond */
-  border: none; /* Supprime la bordure */
-  outline: none; /* Supprime le contour au focus */
-}
-
-.loading-button:focus {
-  outline: none; /* Supprime l'effet de focus par défaut */
-}
-
-
-
-.button_top {
-  display: block;
-  box-sizing: border-box;
-  border: 2px solid #242424;
-  border-radius: 0.75em;
-  padding: 0.75em 1.5em;
-  background: #e8e8e8;
-  color: #242424;
-  transform: translateY(-0.2em);
-  transition: transform 0.1s ease;
-}
-
-.loading-button:hover .button_top {
-  transform: scale(1.1) translateY(-0.33em);
-}
-
-.loading-button:active .button_top {
-  transform: scale(1) translateY(0);
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px;
-}
-
-
-/* Version mobile */
-@media (max-width: 650px) {
-  /* Section musique */
+  /* Section musique (toujours en bas de la page) */
   .section.music {
-    height: 60vh; /* Occupe la moitié inférieure */
+    height: 50vh; /* Occupe la moitié inférieure */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Contenu aligné à gauche */
+    background-color: #000000; /* Couleur de fond si l'image n'est pas chargée */
+    padding-left: 10%; /* Espace sur la gauche pour le contenu */
+    overflow: hidden;
   }
 
+  /* Conteneur du background avec overlay */
   .music-background-container {
-    width: 65%; /* S'étend sur toute la largeur disponible */
+    position: absolute;
+    right: .1vw; /* Aligner à droite */
+    top: 50%; /* Le centre verticalement */
+    transform: translateY(-50%); /* Ajuste pour être parfaitement centré */
+    width: 55%; /* S'étend sur toute la largeur disponible */
+    height: 95%; /* Couvre toute la hauteur du conteneur */
+    z-index: 0; /* Assure que l'overlay est derrière l'image */
   }
 
-  /* Conteneur de la musique */
+  /* L'image de fond */
+  .music-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image couvre bien la zone sans déformation */
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .music-background-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: -1px;
+    height: calc(100% + 2px);
+    background:
+      linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.4) 85%, rgba(0, 0, 0, 1) 100%),
+      linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.2) 15%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 1) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Conteneur principal de la section musique */
   .music-content {
-    width: 35%;
-    flex-direction: column; /* Empiler l'image et le texte verticalement sur mobile */
-    gap: 1.5vw;
-    margin-left: -8vw; /* Retirer le margin gauche */
-    margin-top: -5vh; /* Réduire l'espacement inférieur */
+    display: flex; /* Utilise flexbox pour disposer l'image et les titres côte à côte */
+    align-items: flex-start; /* Aligne les éléments au début (haut) */
+    justify-content: flex-start; /* Garde les éléments alignés à gauche */
+    gap: 20px; /* Espace entre l'image et les titres */
+    z-index: 2;
+    width: 38%;
+    background-color: rgb(0, 0, 0);
+    text-align: left;
+    margin-left: 0vw;
+    margin-bottom: 5vw;
   }
 
   /* Image de couverture */
   .music-cover {
-    width: 22vw; /* Ajuster la hauteur */
+    width: 14vw; /* Largeur de l'image */
+    height: auto; /* La hauteur est automatiquement ajustée */
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: -8px 8px 15px rgba(78, 77, 77, 0.7); /* Ombre autour de l'image */
+    transition: transform 0.5s ease, filter 0.3s ease; /* Transition fluide pour le zoom et l'effet */
+    animation: moveZoom 5s infinite ease-in-out; /* Animation continue de mouvement et zoom */
   }
 
-  /* Texte */
+  .cover-stack {
+    position: relative;
+    display: block;
+    width: max-content;
+    height: auto;
+  }
+
+  /* Fait "comme si" toutes les images superposées étaient normales */
+  .cover-placeholder {
+    width: calc(14vw + 1.5vw * 2); /* 1.5vw * (n-1) pour le décalage — ici n=3 */
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Position absolue des vraies images */
+  .music-cover.stacked {
+    position: absolute;
+    top: 0;
+  }
+
+  .music-cover.stacked:hover {
+    z-index: 100;
+    transform: scale(1.3) rotate(2deg);
+    box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.7);
+    filter: brightness(1.1);
+    transition:
+      transform 0.4s ease,
+      z-index 0.2s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /* Conteneur des titres */
+  .music-text {
+    display: flex;
+    flex-direction: column; /* Empile les titres verticalement */
+    justify-content: flex-start; /* Aligne les titres au début (haut) */
+    gap: 10px; /* Espacement entre les titres */
+    align-self: flex-start; /* Permet au texte de commencer à la même hauteur que l'image */
+  }
+
+  /* Style des titres */
   .music-content h1 {
-    font-size: 3.5vw; /* Réduire la taille du texte */
+    color: #ffffff;
+    font-size: 2vw;
+    font-weight: bold;
+    margin: 0;
   }
 
   .music-content h2 {
-    font-size: 3vw; /* Réduire la taille du texte */
+    color: #ffffff;
+    font-size: 1.5vw;
+    margin: 0;
   }
 
   .music-content h3 {
-    font-size: 2vw; /* Réduire la taille du texte */
+    color: #ffffff;
+    font-size: 1vw;
+    margin: 0;
   }
 
-  /* Description */
   .music .description {
-    bottom: 2vh; /* Réduire l'espace entre le bas de la page et la description */
-    left: 2vw; /* Décaler légèrement */
+    background-color: rgb(0, 0, 0);
+    position: absolute; /* Position absolue par rapport à la page */
+    bottom: 2vh; /* Colle l'élément en bas de la page */
+    left: 2vh; /* Colle l'élément à gauche de la page */
+    display: flex; /* Utilisation de flexbox */
+    align-items: center;
+    flex-direction: column; /* Aligne les éléments (texte et image) en colonne */
+    z-index: 10; /* Assure que la description est au-dessus des autres éléments */
   }
 
   .music .description h1 {
-    font-size: 2.2vw;
+    font-size: 1.2vw;
     position: relative;
     margin: 0; /* Retirer la marge pour éviter les espaces indésirables */
     color: white; /* Couleur du texte */
   }
 
-  /* Bouton */
   .loading-button {
-    font-size: 2.5vw; /* Réduire la taille du texte du bouton */
-    margin-left: 0; /* Centrer le bouton */
-    margin-top: 1vh; /* Réduire l'espacement */
+    all: unset; /* Supprime tous les styles par défaut */
+    display: inline-block; /* Permet au bouton de garder sa structure */
+    font-family: "Open Sans", sans-serif;
+    font-size: 1vw;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    color: #242424;
+    cursor: pointer;
+    position: relative;
+    margin-top: 1.5vh;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transition: all 0.2s ease-in-out;
+    background: none; /* Supprime le fond */
+    border: none; /* Supprime la bordure */
+    outline: none; /* Supprime le contour au focus */
   }
-}
+
+  .loading-button:focus {
+    outline: none; /* Supprime l'effet de focus par défaut */
+  }
+
+  .button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid #242424;
+    border-radius: 0.75em;
+    padding: 0.75em 1.5em;
+    background: #e8e8e8;
+    color: #242424;
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+  }
+
+  .loading-button:hover .button_top {
+    transform: scale(1.1) translateY(-0.33em);
+  }
+
+  .loading-button:active .button_top {
+    transform: scale(1) translateY(0);
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px;
+  }
+
+
+  /* Version mobile */
+  @media (max-width: 650px) {
+    /* Section musique */
+    .section.music {
+      height: 60vh; /* Occupe la moitié inférieure */
+    }
+
+    .music-background-container {
+      width: 65%; /* S'étend sur toute la largeur disponible */
+    }
+
+    /* Conteneur de la musique */
+    .music-content {
+      width: 35%;
+      flex-direction: column; /* Empiler l'image et le texte verticalement sur mobile */
+      gap: 10vw;
+      margin-left: -8vw; /* Retirer le margin gauche */
+      margin-top: -5vh; /* Réduire l'espacement inférieur */
+    }
+
+    /* Image de couverture */
+    .music-cover {
+      width: 22vw; /* Ajuster la hauteur */
+    }
+
+    /* Texte */
+    .music-content h1 {
+      font-size: 3.5vw; /* Réduire la taille du texte */
+    }
+
+    .music-content h2 {
+      font-size: 3vw; /* Réduire la taille du texte */
+    }
+
+    .music-content h3 {
+      font-size: 2vw; /* Réduire la taille du texte */
+    }
+
+    /* Description */
+    .music .description {
+      bottom: 2vh; /* Réduire l'espace entre le bas de la page et la description */
+      left: 2vw; /* Décaler légèrement */
+    }
+
+    .music .description h1 {
+      font-size: 2.2vw;
+      position: relative;
+      margin: 0; /* Retirer la marge pour éviter les espaces indésirables */
+      color: white; /* Couleur du texte */
+    }
+
+    /* Bouton */
+    .loading-button {
+      font-size: 2.5vw; /* Réduire la taille du texte du bouton */
+      margin-left: 0; /* Centrer le bouton */
+      margin-top: 1vh; /* Réduire l'espacement */
+    }
+  }
