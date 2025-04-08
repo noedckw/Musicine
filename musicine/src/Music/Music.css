@@ -20,7 +20,7 @@
     height: 95%; /* Couvre toute la hauteur du conteneur */
     z-index: 0; /* Assure que l'overlay est derrière l'image */
     opacity: 0;
-    transition: opacity 4s ease;
+    transition: opacity 3s ease;
   }
 
   .music-background-container.loaded {
@@ -63,7 +63,7 @@
     margin-left: 0vw;
     margin-bottom: 5vw;
     opacity: 0;
-    transition: opacity 2s ease;
+    transition: opacity 1.5s ease;
   }
   /* Quand l'album est chargé, l'opacité passe à 1 pour un effet de fade in */
   .music-content.loaded {
