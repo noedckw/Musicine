@@ -13,10 +13,6 @@ interface Album {
   link_genius: string;
 }
 
-function getRandomItem<T>(arr: T[]): T {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
-
 const Music: React.FC = () => {
   const [album, setAlbum] = useState<Album | null>(null);
   const [coverOrder, setCoverOrder] = useState<number[]>([]);
