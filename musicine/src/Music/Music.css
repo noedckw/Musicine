@@ -84,14 +84,18 @@
 
   /* Image de couverture */
   .music-cover {
-    width: 14vw; /* Largeur de l'image */
-    height: auto; /* La hauteur est automatiquement ajustée */
+    width: 14vw;
+    height: auto;
     object-fit: cover;
     border-radius: 5px;
-    box-shadow: -8px 8px 15px rgba(78, 77, 77, 0.7); /* Ombre autour de l'image */
-    transition: transform 0.5s ease, filter 0.3s ease; /* Transition fluide pour le zoom et l'effet */
-    animation: moveZoom 5s infinite ease-in-out; /* Animation continue de mouvement et zoom */
+    box-shadow:
+      -8px 8px 15px rgba(78, 77, 77, 0.7),  /* Ombre principale bas gauche */
+      4px -4px 6px rgba(78, 77, 77, 0.3),   /* Ombre douce haut droite */
+      2px 2px 4px rgba(0, 0, 0, 0.2);       /* Ombre légère pour adoucir l'ensemble */
+    transition: transform 0.5s ease, filter 0.3s ease;
+    animation: moveZoom 5s infinite ease-in-out;
   }
+  
 
   .cover-stack {
     position: relative;
@@ -145,11 +149,14 @@
   }
 
   .music-cover.stacked:hover {
-    box-shadow: -8px 8px 10px rgba(255, 255, 255, 0.7);
+    box-shadow:
+      -8px 8px 10px rgba(255, 255, 255, 0.7),  /* Ombre principale bas gauche */
+      4px -4px 6px rgba(255, 255, 255, 0.3),   /* Ombre douce haut droite */
+      2px 2px 4px rgba(255, 255, 255, 0.2);    /* Ombre douce équilibrée */
     filter: brightness(1.1);
-    transition:
-      box-shadow 0.1s ease;
+    transition: box-shadow 0.1s ease;
   }
+
 
   /* Conteneur des titres */
   .music-text {
@@ -307,14 +314,14 @@
     .music-content {
       width: 34%;
       flex-direction: column; /* Empiler l'image et le texte verticalement sur mobile */
-      gap: 14vw;
+      gap: 15vw;
       margin-left: -8vw; /* Retirer le margin gauche */
       margin-top: -6vh; /* Réduire l'espacement inférieur */
     }
 
     /* Image de couverture */
     .cover-stack .music-cover.stacked {
-      width: 22vw;
+      width: 23vw;
     }
 
     .cover-stack .music-cover.stacked:nth-of-type(1) {
