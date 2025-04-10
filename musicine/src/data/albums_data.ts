@@ -99,13 +99,13 @@ const data: Album[] = [
   //   link_genius: "https://genius.com/albums/Young-thug/So-much-fun",
   //   folder: "so much fun",
   // },
-  {
-    album_name: "DS2",
-    artist_name: "Future",
-    release_date: "July 17, 2015",
-    link_genius: "https://genius.com/albums/Future/Ds2-deluxe",
-    folder: "ds2",
-  },
+  // {
+  //   album_name: "DS2",
+  //   artist_name: "Future",
+  //   release_date: "July 17, 2015",
+  //   link_genius: "https://genius.com/albums/Future/Ds2-deluxe",
+  //   folder: "ds2",
+  // },
   // {
   //   album_name: "Madvillainy",
   //   artist_name: "Madvillain",
@@ -197,13 +197,13 @@ const data: Album[] = [
   //   link_genius: "https://genius.com/albums/Travis-scott/Days-before-rodeo",
   //   folder: "dbr",
   // },
-  // {
-  //   album_name: "Blonde",
-  //   artist_name: "Frank Ocean",
-  //   release_date: "August 20, 2016",
-  //   link_genius: "https://genius.com/albums/Frank-ocean/Blonde",
-  //   folder: "blonde",
-  // },
+  {
+    album_name: "Blonde",
+    artist_name: "Frank Ocean",
+    release_date: "August 20, 2016",
+    link_genius: "https://genius.com/albums/Frank-ocean/Blonde",
+    folder: "blonde",
+  },
   // {
   //   album_name: "channel ORANGE",
   //   artist_name: "Frank Ocean",
