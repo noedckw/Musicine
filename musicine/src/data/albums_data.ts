@@ -316,6 +316,13 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Kanye-west-and-ty-dolla-sign/Vultures-2",
     folder: "vultures 2",
   },
+  {
+    album_name: "I LAY DOWN MY LIFE FOR YOU (DIRECTORS CUT)",
+    artist_name: "JPEGMAFIA",
+    release_date: "February 3, 2025",
+    link_genius: "https://genius.com/albums/Jpegmafia/I-lay-down-my-life-for-you-directors-cut",
+    folder: "ildmlfydc",
+  },
 ]
 
 const getAlbums = (): Album[] => {
