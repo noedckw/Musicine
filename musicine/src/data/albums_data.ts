@@ -428,6 +428,34 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Future/Mixtape-pluto",
     folder: "mixtape pluto",
   },
+  {
+    album_name: "Flower Boy",
+    artist_name: "Tyler, The Creator",
+    release_date: "July 21, 2017",
+    link_genius: "https://genius.com/albums/Tyler-the-creator/Flower-boy",
+    folder: "flower boy",
+  },
+  {
+    album_name: "IGOR",
+    artist_name: "Tyler, The Creator",
+    release_date: "May 17, 2019",
+    link_genius: "https://genius.com/albums/Tyler-the-creator/Igor",
+    folder: "igor",
+  },
+  {
+    album_name: "CALL ME IF YOU GET LOST",
+    artist_name: "Tyler, The Creator",
+    release_date: "June 25, 2021",
+    link_genius: "https://genius.com/albums/Tyler-the-creator/Call-me-if-you-get-lost",
+    folder: "cmiygl",
+  },
+  {
+    album_name: "CALL ME IF YOU GET LOST: The Estate Sale",
+    artist_name: "Tyler, The Creator",
+    release_date: "March 31, 2023",
+    link_genius: "https://genius.com/albums/Tyler-the-creator/Call-me-if-you-get-lost-the-estate-sale",
+    folder: "cmiygles",
+  },
 ]
 
 const getAlbums = (): Album[] => {
