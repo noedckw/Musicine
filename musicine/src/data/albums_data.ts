@@ -386,6 +386,48 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Mf-doom/Mm-food-20th-anniversary-edition",
     folder: "mm food 20",
   },
+  {
+    album_name: "NOT ALL HEROES WEAR CAPES",
+    artist_name: "Metro Boomin",
+    release_date: "November 2, 2018",
+    link_genius: "https://genius.com/albums/Metro-boomin/Not-all-heroes-wear-capes",
+    folder: "not all heroes",
+  },
+  {
+    album_name: "HEROES & VILLAINS",
+    artist_name: "Metro Boomin",
+    release_date: "December 2, 2022",
+    link_genius: "https://genius.com/albums/Metro-boomin/Heroes-villains",
+    folder: "heroes villains",
+  },
+  {
+    album_name: "WE DON’T TRUST YOU",
+    artist_name: "Future",
+    release_date: "March 22, 2024",
+    link_genius: "https://genius.com/albums/Future-and-metro-boomin/We-dont-trust-you",
+    folder: "wdty",
+  },
+  {
+    album_name: "WE STILL DON’T TRUST YOU",
+    artist_name: "Future",
+    release_date: "April 12, 2024",
+    link_genius: "https://genius.com/albums/Future-and-metro-boomin/We-still-dont-trust-you",
+    folder: "wsdty",
+  },
+  {
+    album_name: "Monster",
+    artist_name: "Future",
+    release_date: "October 28, 2014",
+    link_genius: "https://genius.com/albums/Future/Monster",
+    folder: "monster",
+  },
+  {
+    album_name: "MIXTAPE PLUTO",
+    artist_name: "Future",
+    release_date: "September 20, 2024",
+    link_genius: "https://genius.com/albums/Future/Mixtape-pluto",
+    folder: "mixtape pluto",
+  },
 ]
 
 const getAlbums = (): Album[] => {
