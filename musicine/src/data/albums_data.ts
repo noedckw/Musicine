@@ -519,6 +519,27 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Denzel-curry/Ta13oo",
     folder: "taboo",
   },
+  {
+    album_name: "The Forever Story",
+    artist_name: "JID",
+    release_date: "August 26, 2022",
+    link_genius: "https://genius.com/albums/Jid/The-forever-story",
+    folder: "the forever story",
+  },
+  {
+    album_name: "DiCaprio 2",
+    artist_name: "JID",
+    release_date: "November 26, 2018",
+    link_genius: "https://genius.com/albums/Jid/Dicaprio-2",
+    folder: "dicaprio 2",
+  },
+  {
+    album_name: "SAVAGE MODE II",
+    artist_name: "21 Savage & Metro Boomin",
+    release_date: "October 2, 2020",
+    link_genius: "https://genius.com/albums/21-savage-and-metro-boomin/Savage-mode-ii",
+    folder: "sv2",
+  },
 ]
 
 const getAlbums = (): Album[] => {
