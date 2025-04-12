@@ -498,6 +498,27 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Future/I-never-liked-you",
     folder: "i never liked you",
   },
+  {
+    album_name: "Melt My Eyez See Your Future",
+    artist_name: "Denzel Curry",
+    release_date: "March 25, 2022",
+    link_genius: "https://genius.com/albums/Denzel-curry/Melt-my-eyez-see-your-future",
+    folder: "mmesyf",
+  },
+  {
+    album_name: "King Of The Mischievous South Vol. 2",
+    artist_name: "Denzel Curry",
+    release_date: "July 19, 2024",
+    link_genius: "https://genius.com/albums/Denzel-curry/King-of-the-mischievous-south-vol-2",
+    folder: "kotmsv2",
+  },
+  {
+    album_name: "TA13OO",
+    artist_name: "Denzel Curry",
+    release_date: "July 27, 2018",
+    link_genius: "https://genius.com/albums/Denzel-curry/Ta13oo",
+    folder: "taboo",
+  },
 ]
 
 const getAlbums = (): Album[] => {
