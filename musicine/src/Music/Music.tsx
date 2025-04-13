@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getAlbums } from "../data/albums_data.ts";
 import { getImageURL } from "../utils/image_utils.ts";
+import CoverViewer from "./CoverViewer";
 import "./Music.css";
 
 interface Album {
@@ -18,13 +19,14 @@ const Music: React.FC = () => {
   const [coverOrder, setCoverOrder] = useState<number[]>([]);
   const [currentAlbumIndex, setCurrentAlbumIndex] = useState<number | null>(null);
   const [albumLoaded, setAlbumLoaded] = useState<boolean>(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [popupIndex, setPopupIndex] = useState<number | null>(null);
 
   const loadRandomAlbum = () => {
     const albums = getAlbums();
     if (albums.length > 0) {
       let randomIndex: number;
 
-      // S'assurer de ne pas sélectionner le même album si possible
       if (albums.length > 1 && currentAlbumIndex !== null) {
         do {
           randomIndex = Math.floor(Math.random() * albums.length);
@@ -37,7 +39,6 @@ const Music: React.FC = () => {
       const folder = randomAlbum.folder;
       const covers = getImageURL(folder, true) as string[];
 
-      // Reset l'état pour forcer le fade-out
       setAlbumLoaded(false);
       setAlbum({
         folder,
@@ -53,22 +54,20 @@ const Music: React.FC = () => {
     }
   };
 
-  // Utilisation de l'événement onLoad sur l'image pour déclencher le fade-in
   const handleBackgroundLoad = () => {
-    // On peut aussi augmenter le délai à 100ms
     setTimeout(() => {
       setAlbumLoaded(true);
     }, 100);
   };
 
-  // Charger un album au montage
   useEffect(() => {
     loadRandomAlbum();
   }, []);
 
   const handleCoverClick = (index: number) => {
     if (index === coverOrder[0]) {
-      window.open(album?.link_genius, "_blank");
+      setIsPopupOpen(true);
+      setPopupIndex(index);
     } else {
       const newOrder = [index, ...coverOrder.filter(i => i !== index)];
       setCoverOrder(newOrder);
@@ -83,18 +82,17 @@ const Music: React.FC = () => {
 
   return (
     <div className="section music">
-      {/* Ajout d'une key pour forcer le remount lors d'un changement d'album */}
       <div key={album.folder} className={`music-background-container ${albumLoaded ? "loaded" : ""}`}>
         {album.background && (
-          <img 
-            src={album.background} 
-            alt="Background Music" 
-            className="music-background" 
-            onLoad={handleBackgroundLoad} 
+          <img
+            src={album.background}
+            alt="Background Music"
+            className="music-background"
+            onLoad={handleBackgroundLoad}
           />
         )}
       </div>
-      {/* Le container du contenu reçoit aussi une clé */}
+
       <div key={album.folder + "-content"} className={`music-content ${albumLoaded ? "loaded" : ""}`}>
         <div
           className="cover-stack"
@@ -124,12 +122,33 @@ const Music: React.FC = () => {
           <h3>{album.release_date}</h3>
         </div>
       </div>
+
       <div className="description">
         <h1>my collections of albums.</h1>
         <div className="loading-button" role="button" onClick={loadRandomAlbum}>
           <div className="button_top">see next.</div>
         </div>
       </div>
+
+      {isPopupOpen && popupIndex !== null && album && (
+        <CoverViewer
+          covers={album.covers}
+          index={popupIndex}
+          geniusLink={album.link_genius}
+          onClose={() => setIsPopupOpen(false)}
+          onNext={() =>
+            setPopupIndex((prev) =>
+              prev !== null && prev < album.covers.length - 1 ? prev + 1 : prev
+            )
+          }
+          onPrev={() =>
+            setPopupIndex((prev) =>
+              prev !== null && prev > 0 ? prev - 1 : prev
+            )
+          }
+        />
+)}
+
     </div>
   );
 };

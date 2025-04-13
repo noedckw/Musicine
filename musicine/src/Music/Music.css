@@ -1,4 +1,26 @@
-  /* Section musique (toujours en bas de la page) */
+@font-face {
+  font-family: "Description";
+  src: url("./../assets/fonts/k2.ttf") format("truetype");
+  font-weight: 10;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Info";
+  src: url("./../assets/fonts/a.ttf") format("truetype");
+  font-weight: 10;
+  font-style: normal;
+}
+
+.music-content h1,
+.music-content h2,
+.music-content h3 {
+  font-family: "Info", sans-serif;
+}
+.music .description h1 {
+  font-family: "Description", sans-serif;
+}
+/* Section musique (toujours en bas de la page) */
   .section.music {
     height: 60vh; /* Occupe la moitié inférieure */
     position: relative;
@@ -351,6 +373,7 @@
     .music .description {
       bottom: 2vh; /* Réduire l'espace entre le bas de la page et la description */
       left: 2vw; /* Décaler légèrement */
+      font-family: "MaSuperFont", sans-serif;
     }
 
     .music .description h1 {
