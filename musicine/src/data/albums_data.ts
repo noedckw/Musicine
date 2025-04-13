@@ -540,6 +540,48 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/21-savage-and-metro-boomin/Savage-mode-ii",
     folder: "sv2",
   },
+{
+  album_name: "The Off-Season",
+  artist_name: "J. Cole",
+  release_date: "May 14, 2021",
+  link_genius: "https://genius.com/albums/J-cole/The-off-season",
+  folder: "the off season",
+},
+{
+  album_name: "KOD",
+  artist_name: "J. Cole",
+  release_date: "April 20, 2018",
+  link_genius: "https://genius.com/albums/J-cole/Kod",
+  folder: "kod",
+},
+  {
+    album_name: "It’s Almost Dry",
+    artist_name: "Pusha T",
+    release_date: "April 22, 2022",
+    link_genius: "https://genius.com/albums/Pusha-t/It-s-almost-dry",
+    folder: "its almost dry",
+  },
+  {
+    album_name: "DAYTONA",
+    artist_name: "Pusha T",
+    release_date: "May 25, 2018",
+    link_genius: "https://genius.com/albums/Pusha-t/Daytona",
+    folder: "daytona",
+  },
+  {
+    album_name: "G I R L",
+    artist_name: "Pharrell Williams",
+    release_date: "March 3, 2014",
+    link_genius: "https://genius.com/albums/Pharrell-williams/G-i-r-l",
+    folder: "girl",
+  },
+  {
+    album_name: "Man on the Moon III: The Chosen",
+    artist_name: "Kid Cudi",
+    release_date: "December 11, 2020",
+    link_genius: "https://genius.com/albums/Kid-cudi/Man-on-the-moon-iii-the-chosen",
+    folder: "motm3",
+  },
 ]
 
 const getAlbums = (): Album[] => {
