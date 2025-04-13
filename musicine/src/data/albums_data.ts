@@ -582,6 +582,34 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Kid-cudi/Man-on-the-moon-iii-the-chosen",
     folder: "motm3",
   },
+  {
+    album_name: "The Melodic Blue",
+    artist_name: "Baby Keem",
+    release_date: "September 10, 2021",
+    link_genius: "https://genius.com/albums/Baby-keem/The-melodic-blue",
+    folder: "melodic blue",
+  },
+  {
+    album_name: "JACKBOYS",
+    artist_name: "JACKBOYS",
+    release_date: "December 27, 2019",
+    link_genius: "https://genius.com/albums/Jackboys-and-travis-scott/Jackboys",
+    folder: "jackboys",
+  },
+  {
+    album_name: "HARDSTONE PSYCHO",
+    artist_name: "Don Toliver",
+    release_date: "June 14, 2024",
+    link_genius: "https://genius.com/albums/Don-toliver/Hardstone-psycho-deluxe",
+    folder: "hardstone psycho",
+  },
+  {
+    album_name: "Life of a DON",
+    artist_name: "Don Toliver",
+    release_date: "October 8, 2021",
+    link_genius: "https://genius.com/albums/Don-toliver/Life-of-a-don",
+    folder: "life of a don",
+  },
 ]
 
 const getAlbums = (): Album[] => {
