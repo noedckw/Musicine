@@ -3,6 +3,7 @@ import { getAlbums } from "../data/albums_data.ts";
 import { getImageURL } from "../utils/image_utils.ts";
 import CoverViewer from "./CoverViewer";
 import "./Music.css";
+import videoLoop from "./../assets/see-next.mp4"
 
 interface Album {
   folder: string;
@@ -21,6 +22,8 @@ const Music: React.FC = () => {
   const [albumLoaded, setAlbumLoaded] = useState<boolean>(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
+  const [isClicked, setIsClicked] = useState(false);
+
 
   const loadRandomAlbum = () => {
     const albums = getAlbums();
@@ -125,9 +128,23 @@ const Music: React.FC = () => {
 
       <div className="description">
         <h1>my collections of albums.</h1>
-        <div className="loading-button" role="button" onClick={loadRandomAlbum}>
-          <div className="button_top">see next.</div>
+        <div
+          className={`video-trigger ${isClicked ? "clicked" : ""}`}
+          onClick={() => {
+            setIsClicked(true);
+            loadRandomAlbum();
+            setTimeout(() => setIsClicked(false), 300); // Durée de l'animation
+          }}
+        >
+          <video
+            src={videoLoop}
+            muted
+            loop
+            autoPlay
+            className="trigger-video"
+          />
         </div>
+
       </div>
 
       {isPopupOpen && popupIndex !== null && album && (
