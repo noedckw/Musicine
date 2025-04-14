@@ -141,6 +141,7 @@ const Music: React.FC = () => {
             muted
             loop
             autoPlay
+            playsInline
             className="trigger-video"
           />
         </div>
