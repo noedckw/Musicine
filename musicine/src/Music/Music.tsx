@@ -3,6 +3,7 @@ import { getAlbums } from "../data/albums_data.ts";
 import { getImageURL } from "../utils/image_utils.ts";
 import CoverViewer from "./CoverViewer";
 import "./Music.css";
+import Yandhi from "./../assets/Yandhi_Pixels.png"
 
 interface Album {
   folder: string;
@@ -74,6 +75,19 @@ const Music: React.FC = () => {
     }
   };
 
+  const handleNextClick = (e: React.MouseEvent<HTMLImageElement>) => {
+    const button = e.currentTarget;
+    button.classList.remove("rotate-on-click"); // reset
+    void button.offsetWidth; // force reflow
+    button.classList.add("rotate-on-click");
+  
+    setTimeout(() => {
+      button.classList.remove("rotate-on-click");
+    }, 600); // même durée que l'animation CSS
+  
+    loadRandomAlbum();
+  };
+
   if (!album) return <div>Loading...</div>;
 
   const displayedCovers = coverOrder.slice(0, 3);
@@ -125,8 +139,13 @@ const Music: React.FC = () => {
 
       <div className="description">
         <h1>my collections of albums.</h1>
-        <div className="loading-button" role="button" onClick={loadRandomAlbum}>
-          <div className="button_top">see next.</div>
+        <div className="next-image-wrapper">
+          <img
+            src={Yandhi}
+            alt="See Next"
+            className="next-image-button"
+            onClick={handleNextClick}
+          />
         </div>
       </div>
 

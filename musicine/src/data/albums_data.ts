@@ -673,6 +673,13 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Kendrick-lamar/Black-panther-the-album",
     folder: "black panther",
   },
+  {
+    album_name: "Alligator Bites Never Heal",
+    artist_name: "Doechii",
+    release_date: "August 30, 2024",
+    link_genius: "https://genius.com/albums/Doechii/Alligator-bites-never-heal",
+    folder: "alligator",
+  },
 ]
 
 const getAlbums = (): Album[] => {

@@ -252,68 +252,70 @@
   }
 
   .music .description {
-    background-color: rgb(0, 0, 0);
     position: absolute; /* Position absolue par rapport à la page */
-    bottom: 2vh; /* Colle l'élément en bas de la page */
-    left: 2vh; /* Colle l'élément à gauche de la page */
+    bottom: 1vh; /* Colle l'élément en bas de la page */
+    left: 1.5vh; /* Colle l'élément à gauche de la page */
     display: flex; /* Utilisation de flexbox */
-    align-items: center;
-    flex-direction: column; /* Aligne les éléments (texte et image) en colonne */
+    align-items: baseline;
+    flex-direction: row;
+    gap: 1vw;
     z-index: 10; /* Assure que la description est au-dessus des autres éléments */
   }
 
   .music .description h1 {
     font-size: 1.2vw;
     position: relative;
-    margin: 0; /* Retirer la marge pour éviter les espaces indésirables */
-    color: white; /* Couleur du texte */
+    color: white;
   }
 
-  .loading-button {
-    all: unset; /* Supprime tous les styles par défaut */
-    display: inline-block; /* Permet au bouton de garder sa structure */
-    font-family: "Open Sans", sans-serif;
-    font-size: 1vw;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    color: #242424;
-    cursor: pointer;
+  .next-image-wrapper {
     position: relative;
-    margin-top: 1.5vh;
+    top: 0.5vw;
+    animation: pulse 3s infinite ease-in-out;
+    width: fit-content;
+    height: fit-content;
     user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    transition: all 0.2s ease-in-out;
-    background: none; /* Supprime le fond */
-    border: none; /* Supprime la bordure */
-    outline: none; /* Supprime le contour au focus */
+    -webkit-user-drag: none;
   }
-
-  .loading-button:focus {
-    outline: none; /* Supprime l'effet de focus par défaut */
-  }
-
-  .button_top {
+  
+  .next-image-button {
+    width: 5vw;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
     display: block;
-    box-sizing: border-box;
-    border: 2px solid #242424;
-    border-radius: 0.75em;
-    padding: 0.75em 1.5em;
-    background: #e8e8e8;
-    color: #242424;
-    transform: translateY(-0.2em);
-    transition: transform 0.1s ease;
   }
-
-  .loading-button:hover .button_top {
-    transform: scale(1.1) translateY(-0.33em);
+  
+  .next-image-button:hover {
+    transform: scale(1.2);
+    filter: brightness(1.1) drop-shadow(0 0 10px #ffffffaa);
   }
-
-  .loading-button:active .button_top {
-    transform: scale(1) translateY(0);
-    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px;
+  
+  @keyframes rotate360 {
+  from {
+    transform: rotate(0deg) scale(0.6);
   }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
 
+.rotate-on-click {
+  animation: rotate360 0.6s ease-out;
+}
+
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
 
   /* Version mobile */
   @media (max-width: 650px) {
@@ -335,10 +337,11 @@
     /* Conteneur de la musique */
     .music-content {
       width: 34%;
+      height: 100%;
       flex-direction: column; /* Empiler l'image et le texte verticalement sur mobile */
       gap: 15vw;
       margin-left: -8vw; /* Retirer le margin gauche */
-      margin-top: -6vh; /* Réduire l'espacement inférieur */
+      margin-top: 10vh; /* Réduire l'espacement inférieur */
     }
 
     /* Image de couverture */
@@ -371,7 +374,10 @@
 
     /* Description */
     .music .description {
-      bottom: 2vh; /* Réduire l'espace entre le bas de la page et la description */
+      gap: 3.5vw;
+      flex-direction: column-reverse;
+      align-items: center;
+      bottom: 1vh; /* Réduire l'espace entre le bas de la page et la description */
       left: 2vw; /* Décaler légèrement */
       font-family: "MaSuperFont", sans-serif;
     }
@@ -383,10 +389,8 @@
       color: white; /* Couleur du texte */
     }
 
-    /* Bouton */
-    .loading-button {
-      font-size: 2.5vw; /* Réduire la taille du texte du bouton */
-      margin-left: 0; /* Centrer le bouton */
-      margin-top: 1vh; /* Réduire l'espacement */
+    .next-image-button {
+      width: 15vw;
+      height: auto;
     }
   }
