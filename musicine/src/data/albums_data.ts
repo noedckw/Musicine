@@ -680,6 +680,27 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Doechii/Alligator-bites-never-heal",
     folder: "alligator",
   },
+  {
+    album_name: "WUNNA",
+    artist_name: "Gunna",
+    release_date: "July 24, 2020",
+    link_genius: "https://genius.com/albums/Gunna/Wunna-deluxe",
+    folder: "wunna",
+  },
+  {
+    album_name: "Punk",
+    artist_name: "Young Thug",
+    release_date: "October 15, 2021",
+    link_genius: "https://genius.com/albums/Young-thug/Punk",
+    folder: "punk",
+  },
+  {
+    album_name: "Scarlet",
+    artist_name: "Doja Cat",
+    release_date: "September 22, 2023",
+    link_genius: "https://genius.com/albums/Doja-cat/Scarlet",
+    folder: "scarlet",
+  },
 ]
 
 const getAlbums = (): Album[] => {
