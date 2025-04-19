@@ -603,13 +603,13 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Don-toliver/Hardstone-psycho-deluxe",
     folder: "hardstone psycho",
   },
-  {
-    album_name: "Life of a DON",
-    artist_name: "Don Toliver",
-    release_date: "October 8, 2021",
-    link_genius: "https://genius.com/albums/Don-toliver/Life-of-a-don",
-    folder: "life of a don",
-  },
+  // {
+  //   album_name: "Life of a DON",
+  //   artist_name: "Don Toliver",
+  //   release_date: "October 8, 2021",
+  //   link_genius: "https://genius.com/albums/Don-toliver/Life-of-a-don",
+  //   folder: "life of a don",
+  // },
   {
     album_name: "BLUE LIPS",
     artist_name: "ScHoolboy Q",
@@ -700,6 +700,41 @@ const data: Album[] = [
     release_date: "September 22, 2023",
     link_genius: "https://genius.com/albums/Doja-cat/Scarlet",
     folder: "scarlet",
+  },
+  {
+    album_name: "RENAISSANCE",
+    artist_name: "Beyoncé",
+    release_date: "July 29, 2022",
+    link_genius: "https://genius.com/albums/Beyonce/Renaissance",
+    folder: "renaissance",
+  },
+  {
+    album_name: "ATLiens",
+    artist_name: "OutKast",
+    release_date: "August 27, 1996",
+    link_genius: "https://genius.com/albums/Outkast/Atliens",
+    folder: "atliens",
+  },
+  {
+    album_name: "Aquemini",
+    artist_name: "OutKast",
+    release_date: "September 29, 1998",
+    link_genius: "https://genius.com/albums/Outkast/Aquemini",
+    folder: "aquemini",
+  },
+  {
+    album_name: "Stankonia",
+    artist_name: "OutKast",
+    release_date: "October 31, 2000",
+    link_genius: "https://genius.com/albums/Outkast/Stankonia",
+    folder: "stankonia",
+  },
+  {
+    album_name: "Speakerboxxx / The Love Below",
+    artist_name: "OutKast",
+    release_date: "September 23, 2003",
+    link_genius: "https://genius.com/albums/Outkast/Speakerboxxx-the-love-below",
+    folder: "speakerboxxx",
   },
 ]
 
