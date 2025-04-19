@@ -778,6 +778,27 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/The-weeknd/Dawn-fm",
     folder: "dawn fm",
   },
+  {
+    album_name: "Off the Wall",
+    artist_name: "Michael Jackson",
+    release_date: "August 10, 1979",
+    link_genius: "https://genius.com/albums/Michael-jackson/Off-the-wall",
+    folder: "off the wall",
+  },
+  {
+    album_name: "Thriller",
+    artist_name: "Michael Jackson",
+    release_date: "November 30, 1982",
+    link_genius: "https://genius.com/albums/Michael-jackson/Thriller",
+    folder: "thriller",
+  },
+  {
+    album_name: "Bad",
+    artist_name: "Michael Jackson",
+    release_date: "August 31, 1987",
+    link_genius: "https://genius.com/albums/Michael-jackson/Bad",
+    folder: "bad",
+  },
 ]
 
 const getAlbums = (): Album[] => {
