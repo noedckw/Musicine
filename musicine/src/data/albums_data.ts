@@ -799,6 +799,41 @@ const data: Album[] = [
     link_genius: "https://genius.com/albums/Michael-jackson/Bad",
     folder: "bad",
   },
+  {
+    album_name: "√",
+    artist_name: "Stromae",
+    release_date: "August 16, 2013",
+    link_genius: "https://genius.com/albums/Stromae/Racine-carree",
+    folder: "racine carre",
+  },
+  {
+    album_name: "All Eyez On Me",
+    artist_name: "2Pac",
+    release_date: "February 13, 1996",
+    link_genius: "https://genius.com/albums/2pac/All-eyez-on-me",
+    folder: "all eyez on me",
+  },
+  {
+    album_name: "Ready To Die",
+    artist_name: "The Notorious B.I.G.",
+    release_date: "September 13, 1994",
+    link_genius: "https://genius.com/albums/The-notorious-big/Ready-to-die",
+    folder: "ready to die",
+  },
+  {
+    album_name: "Life After Death",
+    artist_name: "The Notorious B.I.G.",
+    release_date: "March 25, 1997",
+    link_genius: "https://genius.com/albums/The-notorious-big/Life-after-death",
+    folder: "life after death",
+  },
+  {
+    album_name: "4:44",
+    artist_name: "JAY-Z",
+    release_date: "June 30, 2017",
+    link_genius: "https://genius.com/albums/Jay-z/4-44",
+    folder: "444",
+  },
 ]
 
 const getAlbums = (): Album[] => {
